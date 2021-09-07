@@ -21,7 +21,7 @@ exports.checkAccountPayload = (req, res, next) => {
 
 exports.checkAccountNameUnique = (req, res, next) => {
   const { name } = req.body;
-
+  
   Accounts.getByName(name)
     .then((nameInUse) => {
       if(nameInUse.length > 0) {
